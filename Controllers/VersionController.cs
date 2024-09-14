@@ -17,12 +17,14 @@ public class VersionController : ControllerBase
     {
         var version = Environment.GetEnvironmentVariable("VERSION");
         return new VersionResponse {
-            VersionNumber = version
+            VersionNumber = version,
+            Status = "success"
         };
     }
 
     public class VersionResponse
     {
         public string VersionNumber {get; set;}
+        public string Status {get;set;}
     }
 }
